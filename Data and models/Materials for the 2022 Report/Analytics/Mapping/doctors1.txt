@@ -1,0 +1,48 @@
+iso_a3	name_long	Medical Doctors 2013	Medical Doctors 2018	Medical Doctors 2022
+DZA	Algeria	0.00 	17.45 	16.82 
+AGO	Angola	0.00 	2.11 	2.44 
+BEN	Benin	0.00 	0.76 	1.95 
+BWA	Botswana	3.69 	3.77 	3.77 
+BFA	Burkina Faso	0.46 	0.83 	1.47 
+BDI	Burundi	0.55 	0.94 	0.79 
+CMR	Cameroon	0.85 	1.30 	1.35 
+CPV	Cape Verde	5.70 	7.91 	44.58 
+CAF	Central African Republic	0.67 	0.66 	0.26 
+TCD	Chad	0.43 	0.51 	0.85 
+COM	Comoros	1.76 	2.83 	4.23 
+COG	Republic of Congo	0.00 	1.00 	1.75 
+CIV	Ivory Coast	2.33 	2.20 	2.25 
+COD	Democratic Republic of the Congo	0.87 	3.62 	2.15 
+GNQ	Equatorial Guinea	0.00 	1.64 	1.64 
+ERI	Eritrea	0.52 	0.81 	0.81 
+SWZ	Eswatini	0.00 	2.40 	5.72 
+ETH	Ethiopia	0.00 	1.01 	1.92 
+GAB	Gabon	0.00 	6.24 	5.30 
+GMB	Gambia	1.00 	1.22 	1.01 
+GHA	Ghana	0.99 	1.43 	1.41 
+GIN	Guinea	1.67 	2.22 	2.12 
+GNB	Guinea-Bissau	2.09 	3.00 	2.52 
+KEN	Kenya	1.94 	1.61 	2.37 
+LSO	Lesotho	0.00 	4.54 	2.33 
+LBR	Liberia	0.38 	1.42 	1.80 
+MDG	Madagascar	1.49 	1.95 	1.77 
+MWI	Malawi	0.12 	1.50 	0.54 
+MLI	Mali	1.16 	1.44 	1.95 
+MRT	Mauritania	1.66 	3.81 	2.69 
+MUS	Mauritius	15.85 	18.49 	14.11 
+MOZ	Mozambique	0.58 	0.84 	1.73 
+NAM	Namibia	0.00 	6.01 	6.22 
+NER	Niger	0.51 	0.47 	0.27 
+NGA	Nigeria	3.76 	4.23 	3.94 
+RWA	Rwanda	0.99 	1.32 	1.20 
+STP	Sao Tome and Principe	3.25 	2.84 	4.62 
+SEN	Senegal	0.00 	1.85 	1.48 
+SYC	Seychelles	9.62 	23.28 	77.30 
+SLE	Sierra Leone	0.00 	0.72 	1.29 
+ZAF	South Africa	0.00 	7.59 	8.02 
+SSD	South Sudan	0.00 	0.40 	0.42 
+TZA	Tanzania	0.30 	0.50 	1.33 
+TGO	Togo	0.51 	0.76 	0.82 
+UGA	Uganda	0.96 	4.14 	1.92 
+ZMB	Zambia	0.00 	2.25 	3.26 
+ZWE	Zimbabwe	0.82 	2.01 	1.92 

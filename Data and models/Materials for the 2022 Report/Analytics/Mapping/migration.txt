@@ -1,0 +1,48 @@
+Country	iso_a3	income level	Doctors Migration to Stock ratio	Nurses Migration to Stock ratio
+Algeria	DZA	Lower-Middle-Income Economies	0.088754647	0.010307704
+Angola	AGO	Lower-Middle-Income Economies	0.037041298	0.0011841
+Benin	BEN	Lower-Middle-Income Economies	0.066334356	0.001018157
+Botswana	BWA	High/Upper-Middle-Income Economies 	0.019153226	0.035127055
+Burkina Faso	BFA	Low-Income Economies	0.016551309	0.005228852
+Burundi	BDI	Low-Income Economies	0.130067068	0.001387111
+Cameroon	CMR	Lower-Middle-Income Economies	0.116786379	0.49954471
+cabo verde	CPV	Lower-Middle-Income Economies	0.02269289	0.291179596
+Central African Republic	CAF	Low-Income Economies	0.143452835	0.001542067
+Chad	TCD	Low-Income Economies	0.00928998	0.019780631
+Comoros	COM	Lower-Middle-Income Economies	0.011299435	0
+Congo	COG	Lower-Middle-Income Economies	0.24184261	0.051677732
+Cote d Ivoire	CIV	Lower-Middle-Income Economies	0.035084658	0.01976569
+DRC	COD	Low-Income Economies	0.014513884	0.000607028
+Equatorial Guinea	GNQ	High/Upper-Middle-Income Economies 	0.003640568	0.007272727
+Eritrea	ERI	Low-Income Economies	0.020079135	0.352706211
+Eswatini	SWZ	Lower-Middle-Income Economies	0.017467249	0.02327356
+Ethiopia	ETH	Low-Income Economies	0.034750011	0.048102269
+Gabon	GAB	High/Upper-Middle-Income Economies 	0.381700558	0.022308276
+Gambia	GMB	Low-Income Economies	0.047468257	0.283334938
+Ghana	GHA	Lower-Middle-Income Economies	0.383622514	0.101075424
+Guinea	GIN	Low-Income Economies	0.386709274	0.0647541
+Guinea-Bissau	GNB	Low-Income Economies	0.005651061	0.027674295
+Kenya	KEN	Lower-Middle-Income Economies	0.031973108	0.133760111
+Lesotho	LSO	Lower-Middle-Income Economies	0.003727103	0.073655575
+Liberia	LBR	Low-Income Economies	0.0639413	1.287130084
+Madagascar	MDG	Low-Income Economies	0.115487572	0.000657895
+Malawi	MWI	Low-Income Economies	0.043495447	0.020850709
+Mali	MLI	Low-Income Economies	0.043843707	0.008218745
+Mauritania	MRT	Lower-Middle-Income Economies	0.001571049	0.001845302
+Mauritius	MUS	High/Upper-Middle-Income Economies 	0.069805915	0.103286046
+Mozambique	MOZ	Low-Income Economies	0.012589614	0.001747437
+Namibia	NAM	High/Upper-Middle-Income Economies 	0.004383219	0.0044992
+Niger	NER	Low-Income Economies	0.090694032	0.01577218
+Nigeria	NGA	Lower-Middle-Income Economies	0.115118182	0.185335394
+Rwanda	RWA	Low-Income Economies	1.430825243	0.006221651
+Sao Tome and Principe	STP	Lower-Middle-Income Economies	0.028571429	0.002272727
+Senegal	SEN	Lower-Middle-Income Economies	0.137844194	0.105340933
+Seychelles	SYC	High/Upper-Middle-Income Economies 	0.013285024	0.050117463
+Sierra Leone	SLE	Low-Income Economies	0.042495479	0.379611898
+South Africa	ZAF	High/Upper-Middle-Income Economies 	0.185481352	0.023045288
+South Sudan	SSD	Low-Income Economies	0.013157895	0.028697572
+Tanzania	TZA	Lower-Middle-Income Economies	0.015529737	0.031903569
+Togo	TGO	Low-Income Economies	0.349315068	0.424334601
+Uganda	UGA	Low-Income Economies	0.040875932	0.00934
+Zambia	ZMB	Lower-Middle-Income Economies	0.024651661	0.036158079
+Zimbabwe	ZWE	Lower-Middle-Income Economies	0.19989792	0.162172035

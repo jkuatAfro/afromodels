@@ -1,0 +1,48 @@
+iso_a3	name_long	Density 2013	Density 2018	Density 2022
+AGO	Angola	0.01	17.30	21.20
+BDI	Burundi	7.06	9.05	8.20
+BEN	Benin	5.65	4.50	7.91
+BFA	Burkina Faso	4.87	9.11	11.72
+BWA	Botswana	36.69	34.96	34.29
+CAF	Central African Republic	2.42	3.87	2.39
+CIV	Cote d Ivoire	7.95	10.29	11.71
+CMR	Cameroon	9.67	5.53	7.85
+COD	Democratic Republic of the Congo	9.23	15.96	14.10
+COG	Congo	9.47	12.30	12.83
+COM	Comoros	5.98	18.73	20.61
+CPV	Cabo Verde	13.17	21.83	60.90
+DZA	Algeria	2.93	33.35	42.17
+ERI	Eritrea	13.45	15.37	14.58
+ETH	Ethiopia	0.71	8.03	15.36
+GAB	Gabon	2.30	37.34	29.04
+GHA	Ghana	18.68	45.37	45.65
+GIN	Guinea	7.36	8.64	4.51
+GMB	Gambia	13.45	8.65	7.70
+GNB	Guinea-Bissau	7.27	10.38	12.38
+GNQ	Equatorial Guinea	0.00	4.34	10.01
+KEN	Kenya	10.93	13.60	22.69
+LBR	Liberia	2.20	20.67	12.01
+LSO	Lesotho	0.00	48.42	19.74
+MDG	Madagascar	4.39	5.13	4.65
+MLI	Mali	4.82	5.68	5.60
+MOZ	Mozambique	4.81	5.66	11.00
+MRT	Mauritania	12.92	15.33	19.25
+MUS	Mauritius	46.56	61.36	53.86
+MWI	Malawi	2.37	5.83	5.54
+NAM	Namibia	18.64	59.88	66.90
+NER	Niger	2.89	2.69	2.33
+NGA	Nigeria	13.85	19.43	20.76
+RWA	Rwanda	10.22	13.14	12.44
+SEN	Senegal	4.14	6.73	6.11
+SLE	Sierra Leone	11.91	8.54	22.13
+SSD	South Sudan	0.00	5.63	7.34
+STP	Sao Tome and Principe	27.66	24.42	25.08
+SWZ	Eswatini	33.40	43.07	49.46
+SYC	Seychelles	52.94	161.98	213.25
+TCD	Chad	3.50	4.19	3.27
+TGO	Togo	3.51	4.80	5.90
+TZA	Tanzania	4.52	5.99	6.20
+UGA	Uganda	14.32	18.63	24.59
+ZAF	South Africa	10.90	57.72	74.35
+ZMB	Zambia	1.82	15.81	32.82
+ZWE	Zimbabwe	14.63	21.10	36.32

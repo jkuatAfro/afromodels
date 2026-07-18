@@ -1,0 +1,48 @@
+iso_a3	name_long	Dentists density 2013	Dentists density 2018	Dentists density 2022
+DZA	Algeria	0.00	3.69	 3.61 
+AGO	Angola	0.00	0.78	0.29
+BEN	Benin	0.00	0.04	0.04
+BWA	Botswana	0.25	0.50	0.48
+BFA	Burkina Faso	0.02	0.14	0.09
+BDI	Burundi	0.00	0.01	0.01
+CMR	Cameroon	0.03	0.12	0.15
+CPV	Cape Verde	0.00	2.71	1.46
+CAF	Central African Republic	0.00	0.03	0.02
+TCD	Chad	0.00	0.01	0.02
+COM	Comoros	0.26	0.41	0.38
+COG	Republic of Congo	0.00	0.05	0.02
+CIV	Ivory Coast	0.27	0.20	0.20
+COD	Democratic Republic of the Congo	0.00	0.05	0.05
+GNQ	Equatorial Guinea	0.00	0.00	0.00
+ERI	Eritrea	0.00	1.02	0.67
+SWZ	Eswatini	0.00	1.03	0.75
+ETH	Ethiopia	0.00	0.18	0.30
+GAB	Gabon	0.00	0.20	0.46
+GMB	Gambia	0.08	0.06	0.09
+GHA	Ghana	0.00	0.30	0.22
+GIN	Guinea	0.00	0.06	0.06
+GNB	Guinea-Bissau	0.00	0.08	0.11
+KEN	Kenya	0.23	0.35	0.43
+LSO	Lesotho	0.00	1.27	0.64
+LBR	Liberia	0.00	0.05	0.03
+MDG	Madagascar	0.05	0.21	0.09
+MWI	Malawi	0.00	0.10	0.13
+MLI	Mali	0.00	0.04	0.04
+MRT	Mauritania	0.00	0.35	0.31
+MUS	Mauritius	2.72	4.10	3.79
+MOZ	Mozambique	0.15	0.20	0.21
+NAM	Namibia	0.31	1.20	1.49
+NER	Niger	0.02	0.01	0.01
+NGA	Nigeria	0.00	1.28	0.85
+RWA	Rwanda	0.11	0.18	0.17
+STP	Sao Tome and Principe	0.00	0.28	0.26
+SEN	Senegal	0.04	0.15	0.17
+SYC	Seychelles	1.45	15.81	16.34
+SLE	Sierra Leone	0.00	0.55	0.19
+ZAF	South Africa	1.93	1.24	0.59
+SSD	South Sudan	0.00	0.05	0.15
+TZA	Tanzania	0.09	0.25	0.20
+TGO	Togo	0.03	0.06	0.03
+UGA	Uganda	0.08	0.01	0.34
+ZMB	Zambia	0.19	0.32	0.52
+ZWE	Zimbabwe	0.30	0.43	0.25

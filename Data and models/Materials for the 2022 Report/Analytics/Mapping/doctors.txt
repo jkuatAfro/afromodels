@@ -1,0 +1,48 @@
+region	Medical Doctors 2013	Medical Doctors 2018	Medical Doctors 2022
+Algeria		17.45 	10.70 
+Angola		2.11 	2.44 
+Benin		0.76 	1.95 
+Botswana	3.69 	3.77 	3.77 
+Burkina Faso	0.46 	0.83 	1.47 
+Burundi	0.55 	0.94 	0.79 
+Cameroon	0.85 	1.30 	1.35 
+Cape Verde	5.70 	7.91 	44.58 
+Central African Republic	0.67 	0.66 	0.26 
+Chad	0.43 	0.51 	0.85 
+Comoros	1.76 	2.83 	4.23 
+Republic of Congo		1.00 	1.75 
+Ivory Coast	2.33 	2.20 	2.25 
+Democratic Republic of the Congo	0.87 	3.62 	2.15 
+Equatorial Guinea		1.64 	1.64 
+Eritrea	0.52 	0.81 	0.81 
+Eswatini		2.40 	5.72 
+Ethiopia		1.01 	1.92 
+Gabon		6.24 	5.30 
+Gambia	1.00 	1.22 	1.01 
+Ghana	0.99 	1.43 	1.41 
+Guinea	1.67 	2.22 	0.25 
+Guinea-Bissau	2.09 	3.00 	2.52 
+Kenya	1.94 	1.61 	2.37 
+Lesotho		4.54 	2.33 
+Liberia	0.38 	1.42 	1.80 
+Madagascar	1.49 	1.95 	1.77 
+Malawi	0.12 	1.50 	0.54 
+Mali	1.16 	1.44 	1.95 
+Mauritania	1.66 	3.81 	2.69 
+Mauritius	15.85 	18.49 	14.11 
+Mozambique	0.58 	0.84 	1.73 
+Namibia		6.01 	6.22 
+Niger	0.51 	0.47 	0.27 
+Nigeria	3.76 	4.23 	3.94 
+Rwanda	0.99 	1.32 	1.20 
+Sao Tome and Principe	3.25 	2.84 	4.62 
+Senegal		1.85 	1.48 
+Seychelles	9.62 	23.28 	77.30 
+Sierra Leone		0.72 	1.29 
+South Africa		7.59 	8.02 
+South Sudan		0.40 	0.42 
+Tanzania	0.30 	0.50 	1.33 
+Togo	0.51 	0.76 	0.82 
+Uganda	0.96 	4.14 	1.92 
+Zambia		2.25 	3.26 
+Zimbabwe	0.82 	2.01 	1.92 

@@ -1,0 +1,48 @@
+iso_a3	name_long	Midwives Density 2013	Midwives Density 2018	Midwives Density 2022
+DZA	Algeria	2.93	2.13	2.02
+AGO	Angola	0.01	0.46	0.01
+BEN	Benin	0.91	0.88	1.54
+BWA	Botswana	6.77	0.00	0.00
+BFA	Burkina Faso	0.90	3.22	4.10
+BDI	Burundi	0.03	0.14	0.14
+CMR	Cameroon	0.06	0.28	0.60
+CPV	Cape Verde	0.00	0.47	0.46
+CAF	Central African Republic	1.07	0.87	0.96
+TCD	Chad	0.34	0.60	0.51
+COM	Comoros	4.22	6.27	7.00
+COG	Republic of Congo	2.66	1.96	1.75
+CIV	Ivory Coast	1.71	2.14	2.64
+COD	Democratic Republic of the Congo	0.21	0.42	0.31
+GNQ	Equatorial Guinea	0.00	0.34	0.16
+ERI	Eritrea	0.00	0.13	0.18
+SWZ	Eswatini	0.00	0.12	0.12
+ETH	Ethiopia	0.71	1.45	2.80
+GAB	Gabon	2.30	3.34	3.85
+GMB	Gambia	1.22	1.31	1.40
+GHA	Ghana	4.10	3.44	7.13
+GIN	Guinea	0.45	0.69	0.64
+GNB	Guinea-Bissau	0.90	0.82	0.94
+KEN	Kenya	0.00	0.00	0.03
+LSO	Lesotho	0.00	12.64	12.05
+LBR	Liberia	1.82	1.90	1.86
+MDG	Madagascar	1.44	1.49	1.35
+MWI	Malawi	0.03	0.00	0.30
+MLI	Mali	1.15	1.62	0.85
+MRT	Mauritania	0.98	2.00	2.83
+MUS	Mauritius	0.00	4.38	4.36
+MOZ	Mozambique	1.69	2.05	4.06
+NAM	Namibia	0.00	0.02	0.07
+NER	Niger	0.49	0.40	0.31
+NGA	Nigeria	5.80	6.09	6.72
+RWA	Rwanda	0.56	1.17	1.44
+STP	Sao Tome and Principe	1.60	2.37	1.11
+SEN	Senegal	2.90	1.94	1.89
+SYC	Seychelles	0.00	15.32	16.74
+SLE	Sierra Leone	3.14	0.50	2.64
+ZAF	South Africa	0.00	0.00	0.00
+SSD	South Sudan	0.00	1.65	2.77
+TZA	Tanzania	0.00	0.00	0.00
+TGO	Togo	1.12	1.60	2.11
+UGA	Uganda	1.98	1.74	6.98
+ZMB	Zambia	1.82	1.92	4.60
+ZWE	Zimbabwe	0.00	0.57	5.88

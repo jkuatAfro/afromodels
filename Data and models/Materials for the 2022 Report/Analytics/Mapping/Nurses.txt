@@ -1,0 +1,48 @@
+iso_a3	name_long	 Nurses Density 2013	 Nurses Density 2018	 Nurses Density 2022
+DZA	Algeria	0.00	13.76	 23.33 
+AGO	Angola	0.00	14.74	18.75
+BEN	Benin	4.73	2.86	4.41
+BWA	Botswana	26.23	31.19	30.52
+BFA	Burkina Faso	3.51	5.06	6.16
+BDI	Burundi	6.48	7.97	7.27
+CMR	Cameroon	8.76	3.96	5.90
+CPV	Cape Verde	7.46	13.45	15.86
+CAF	Central African Republic	0.67	2.35	1.16
+TCD	Chad	2.73	3.08	1.91
+COM	Comoros	0.00	9.62	9.38
+COG	Republic of Congo	6.81	9.34	9.33
+CIV	Ivory Coast	3.91	5.95	6.83
+COD	Democratic Republic of the Congo	8.14	11.92	11.65
+GNQ	Equatorial Guinea	0.00	2.36	8.21
+ERI	Eritrea	12.93	14.43	13.59
+SWZ	Eswatini	33.40	40.55	43.62
+ETH	Ethiopia	0.00	5.56	10.64
+GAB	Gabon	0.00	27.76	19.89
+GMB	Gambia	11.23	6.13	5.28
+GHA	Ghana	13.59	40.50	37.10
+GIN	Guinea	5.24	5.73	3.62
+GNB	Guinea-Bissau	4.28	6.57	8.92
+KEN	Kenya	9.00	11.99	20.30
+LSO	Lesotho	0.00	31.24	5.36
+LBR	Liberia	0.00	17.36	8.34
+MDG	Madagascar	1.46	1.70	1.54
+MWI	Malawi	2.21	4.33	4.70
+MLI	Mali	2.50	2.62	2.80
+MRT	Mauritania	10.28	9.52	13.73
+MUS	Mauritius	30.70	38.49	35.39
+MOZ	Mozambique	2.55	2.77	5.21
+NAM	Namibia	18.64	53.86	60.61
+NER	Niger	1.89	1.82	1.74
+NGA	Nigeria	4.29	9.11	10.10
+RWA	Rwanda	8.67	10.65	9.80
+STP	Sao Tome and Principe	22.81	19.21	19.35
+SEN	Senegal	1.24	2.94	2.74
+SYC	Seychelles	43.32	123.37	119.21
+SLE	Sierra Leone	8.77	7.32	18.20
+ZAF	South Africa	10.90	50.13	66.33
+SSD	South Sudan	0.00	3.58	4.15
+TZA	Tanzania	4.22	5.50	4.88
+TGO	Togo	1.89	2.44	2.97
+UGA	Uganda	11.38	12.74	15.70
+ZMB	Zambia	0.00	11.63	24.97
+ZWE	Zimbabwe	13.81	18.52	28.51

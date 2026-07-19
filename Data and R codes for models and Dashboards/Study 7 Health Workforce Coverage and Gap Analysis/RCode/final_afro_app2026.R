@@ -1,3 +1,35 @@
+# =========================================================
+# HRH GAP TOOL (2026)
+# =========================================================
+# Purpose:
+#   Interactive R Shiny application for projecting health workforce supply,
+#   estimating benchmark-based and health-need-linked requirements, and
+#   quantifying workforce gaps, coverage, and additional staff needed.
+#
+# =========================================================
+# Core HRH Projection Model
+# =========================================================
+# Purpose:
+# Performs the complete HRH projection workflow for a single country,
+# from data validation through workforce projections and gap analysis.
+#
+# Key modelling assumptions:
+#   - Reported cadre headcounts are used in preference to density-derived
+#     headcounts whenever available.
+#   - Missing historical workforce stocks are completed using interpolation,
+#     followed by forward and backward filling where necessary.
+#   - Business-as-Usual (BAU) growth is estimated from the most recent valid
+#     annual workforce growth rates.
+#   - ScaleUp and Shock scenarios modify the BAU growth rate using
+#     country-specific scenario adjustments.
+#   - Health-need indicators are standardized within each country before
+#     constructing the composite need index.
+#   - Workforce gap = Projected supply − Projected requirement.
+#   - Additional staff needed = max(0, Projected requirement − Projected supply).
+#   - Workforce coverage = Projected supply / Projected requirement.
+# =========================================================
+
+
 library(shiny)
 library(shinydashboard)
 library(dplyr)
@@ -17,7 +49,9 @@ options(shiny.maxRequestSize = 1024 * 1024^2)
 
 # =========================================================
 # Plot styling
+# Common plot theme and colour palettes used throughout the dashboard.
 # =========================================================
+# Return a consistent ggplot theme for all charts.
 theme_hrh <- function() {
   theme_minimal(base_size = 14) +
     theme(
@@ -50,6 +84,7 @@ series_cols <- c(
   "Requirement" = "#d95f02"
 )
 
+# Convert a ggplot object to Plotly and standardize hover and legend settings.
 apply_plotly_style <- function(g) {
   ggplotly(g, tooltip = "text") %>%
     layout(
@@ -59,8 +94,11 @@ apply_plotly_style <- function(g) {
 }
 
 # =========================================================
-# Helpers
+# Helper functions
+# Reusable utilities for growth, standardization, formatting, validation, and axes.
 # =========================================================
+# Estimate CAGR from the first and last valid positive observations.
+# Returns NA when there are too few observations or an invalid time interval.
 cagr <- function(x, years) {
   ok <- !is.na(x) & !is.na(years)
   x <- x[ok]
@@ -72,6 +110,7 @@ cagr <- function(x, years) {
   (tail(x, 1) / head(x, 1))^(1 / denom) - 1
 }
 
+# Standardize a series within country. Constant series are assigned zeros.
 zscore <- function(x) {
   s <- stats::sd(x, na.rm = TRUE)
   m <- mean(x, na.rm = TRUE)
@@ -79,12 +118,15 @@ zscore <- function(x) {
   (x - m) / s
 }
 
+# Format ranking values according to whether they are percentages or counts.
 format_metric_value <- function(x, metric) {
   if (metric == "coverage_pct") return(paste0(round(x, 1), "%"))
   if (metric %in% c("additional_needed", "gap")) return(scales::comma(round(x, 1)))
   as.character(round(x, 2))
 }
 
+# Return the first observed year at or above a threshold within each group.
+# No interpolation between annual observations is performed.
 first_threshold_point <- function(data, value_col, threshold, group_cols) {
   value_col <- rlang::ensym(value_col)
   data %>%
@@ -96,6 +138,7 @@ first_threshold_point <- function(data, value_col, threshold, group_cols) {
     ungroup()
 }
 
+# Construct readable five-year axis breaks while retaining key years.
 get_year_axis_breaks <- function(years, target_year = NULL, horizon_year = NULL) {
   years <- sort(unique(stats::na.omit(as.numeric(years))))
   if (length(years) == 0) return(numeric(0))
@@ -112,6 +155,7 @@ get_year_axis_breaks <- function(years, target_year = NULL, horizon_year = NULL)
   breaks[breaks >= year_min & breaks <= year_max]
 }
 
+# Normalize text to UTF-8 and correct known country-name encoding problems.
 clean_text_encoding <- function(x) {
   x <- as.character(x)
   x <- iconv(x, from = "", to = "UTF-8", sub = "")
@@ -127,6 +171,7 @@ required_cols <- c(
   "DALYS", "MMR", "NCDMR", "UHC_SCI"
 )
 
+# Create one specification row per selected country from current defaults.
 make_default_specs <- function(countries, input) {
   tibble(
     Country = countries,
@@ -144,6 +189,9 @@ make_default_specs <- function(countries, input) {
   )
 }
 
+# Validate country specifications before model execution.
+# Checks required fields, duplicates, missing countries, non-negative values,
+# cadre shares summing to one, and valid scenario adjustments.
 validate_specs_table <- function(specs, selected_countries) {
   req_cols <- c(
     "Country", "lambda", "b_doc", "b_nmw", "b_pharm", "b_dent",
@@ -195,6 +243,9 @@ validate_specs_table <- function(specs, selected_countries) {
 # =========================================================
 # Core model
 # =========================================================
+# Run the complete HRH model for one country.
+# Returns processed source data, annual gap results, target-year results,
+# latest observed year, and country-specific base-year information.
 run_hrh_model <- function(
     data,
     k_growth = 5,
@@ -209,6 +260,7 @@ run_hrh_model <- function(
       delta = c(0.00, 0.01, -0.01)
     )
 ) {
+  # Confirm that all variables required by the model are present.
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
     stop(paste0("The loaded dataset is missing these required columns: ", paste(missing_cols, collapse = ", ")))
@@ -235,6 +287,8 @@ run_hrh_model <- function(
       UHC_SCI = as.numeric(UHC_SCI)
     )
   
+  # Construct cadre headcounts. Reported counts take precedence;
+  # density multiplied by population is used only when counts are missing.
   data2 <- data %>%
     mutate(
       stock_doctors = ifelse(!is.na(Doctors_Number), Doctors_Number, Doctors * Population / 10000),
@@ -243,6 +297,8 @@ run_hrh_model <- function(
       stock_pharm = ifelse(!is.na(Pharmacists_Number), Pharmacists_Number, Pharmacists * Population / 10000)
     )
   
+  # Reshape workforce stocks to long format and complete missing values.
+  # Internal gaps are interpolated, then remaining values are forward/back filled.
   stocks_long <- data2 %>%
     select(
       ISO, Country, Year, Population, GDP,
@@ -271,6 +327,8 @@ run_hrh_model <- function(
     mutate(stock = zoo::na.locf(stock, fromLast = TRUE, na.rm = FALSE)) %>%
     ungroup()
   
+  # Estimate recent BAU growth by country and cadre.
+  # Invalid, non-finite, and <= -100% annual growth values are excluded.
   g_bau <- stocks_long %>%
     group_by(ISO, Country, cadre) %>%
     arrange(Year) %>%
@@ -294,6 +352,7 @@ run_hrh_model <- function(
     ) %>%
     arrange(ISO, Country, Year)
   
+  # Project population and GDP using recent CAGR; use zero growth if unavailable.
   drivers_future <- drivers_hist %>%
     group_by(ISO, Country) %>%
     group_modify(~{
@@ -318,6 +377,8 @@ run_hrh_model <- function(
   drivers_all <- bind_rows(drivers_hist, drivers_future) %>%
     arrange(ISO, Country, Year)
   
+  # Project workforce supply under BAU, ScaleUp, and Shock scenarios.
+  # Scenario growth <= -100% is rejected and projected stock cannot be negative.
   proj_supply <- function(stocks_long, g_bau, drivers_all, scenario_delta) {
     base <- stocks_long %>%
       group_by(ISO, Country, cadre) %>%
@@ -396,6 +457,7 @@ run_hrh_model <- function(
   
   supply_all <- proj_supply(stocks_long, g_bau, drivers_all, scenario_delta)
   
+  # Benchmark requirement = benchmark density x projected population / 10,000.
   req_bench <- drivers_all %>%
     tidyr::crossing(bench) %>%
     mutate(
@@ -404,6 +466,8 @@ run_hrh_model <- function(
     ) %>%
     select(ISO, Country, Year, Population, cadre, req_stock, req_type)
   
+  # Build the within-country composite health-need index.
+  # Missing indicators are carried forward/backward before standardization.
   need_vars <- data2 %>%
     group_by(ISO, Country, Year) %>%
     summarise(
@@ -430,6 +494,8 @@ run_hrh_model <- function(
   
   B_base <- sum(bench$B)
   
+  # Need-linked total requirement is adjusted by lambda and then allocated
+  # across cadres using country-specific shares.
   req_need <- drivers_all %>%
     select(ISO, Country, Year, Population) %>%
     left_join(need_vars, by = c("ISO", "Country", "Year")) %>%
@@ -446,6 +512,7 @@ run_hrh_model <- function(
   
   req_all <- bind_rows(req_bench, req_need)
   
+  # Combine supply and requirements, then calculate gap and coverage.
   gaps <- supply_all %>%
     select(ISO, Country, Year, cadre, scenario, supply_stock = stock) %>%
     tidyr::crossing(req_type = unique(req_all$req_type)) %>%
@@ -467,6 +534,7 @@ run_hrh_model <- function(
     ) %>%
     arrange(ISO, Country, cadre, req_type, scenario, Year)
   
+  # Extract the selected target year and compute additional staff needed.
   target_table <- gaps_smooth %>%
     filter(Year == target_year) %>%
     mutate(
@@ -487,7 +555,8 @@ run_hrh_model <- function(
 }
 
 # =========================================================
-# UI
+# User interface
+# Dashboard layout, inputs, tabs, editable specifications, outputs, and downloads.
 # =========================================================
 ui <- dashboardPage(
   dashboardHeader(title = "HRH GAP Tool (2026)"),
@@ -769,7 +838,8 @@ ui <- dashboardPage(
 )
 
 # =========================================================
-# Server
+# Server logic
+# Data loading, reactive state, validation, model execution, plots, tables, and downloads.
 # =========================================================
 server <- function(input, output, session) {
   
@@ -777,6 +847,7 @@ server <- function(input, output, session) {
     paste(required_cols, collapse = ", ")
   })
   
+  # Load CSV or RDS data from a path or browser upload.
   raw_data <- reactive({
     mode <- input$data_source_mode
     
@@ -887,6 +958,7 @@ server <- function(input, output, session) {
     clean_text_encoding(input$country_select)
   })
   
+  # Store the editable country-specification table reactively.
   specs_rv <- reactiveVal(NULL)
   
   build_specs_now <- function() {
@@ -965,6 +1037,8 @@ server <- function(input, output, session) {
     validate_specs_table(specs_rv(), selected_countries())
   })
   
+  # Run models only when the user clicks Run model.
+  # Countries are modelled separately, then their outputs are combined.
   model_results <- eventReactive(input$run_model, {
     req(raw_data())
 
@@ -1148,6 +1222,7 @@ server <- function(input, output, session) {
       datatable(options = list(scrollX = TRUE, pageLength = 12), rownames = FALSE, filter = "top")
   })
   
+  # Plot coverage ratios; the horizontal line at 1 indicates requirement met.
   output$coverage_plot <- renderPlotly({
     req(model_results())
     
@@ -1272,6 +1347,7 @@ server <- function(input, output, session) {
       layout(xaxis = list(tickmode = "array", tickvals = year_breaks))
   })
   
+  # Plot workforce gaps; negative values indicate shortages.
   output$gap_plot <- renderPlotly({
     req(model_results())
     
@@ -1369,6 +1445,7 @@ server <- function(input, output, session) {
       layout(xaxis = list(tickmode = "array", tickvals = year_breaks))
   })
   
+  # Compare projected supply and requirement headcounts over time.
   output$supplyreq_plot <- renderPlotly({
     req(model_results())
     
@@ -1441,6 +1518,7 @@ server <- function(input, output, session) {
       layout(xaxis = list(tickmode = "array", tickvals = year_breaks))
   })
   
+  # Rank countries and classify shortage/surplus according to the selected metric.
   ranking_data <- reactive({
     req(model_results())
     
@@ -1576,4 +1654,5 @@ server <- function(input, output, session) {
   )
 }
 
+# Launch the application.
 shinyApp(ui, server)
